@@ -27,13 +27,14 @@ ax.axis('equal')
 plt.xticks([-1, 0, 1], minor=True)
 plt.yticks([-1, 0, 1])
 
-pist_xy = np.array([np.radians(deg) for deg in [30, 45, 60, 90, 120, 135, 150, 180, 270, 360]])
-nim=np.array([1 for _ in range(len(pist_xy))])
-print(len(nim))
-print(nim)
-colors=np.array(['red', 'green', 'blue', 'orange','red', 'green', 'blue', 'orange','orange','red'])
+pist_xy = np.array([np.radians(deg) for deg in [30, 45, 60, 90, 120, 135, 150, 180, 270]])
+nim=np.array([1,2,4,6, 8, 10, 12, 14, 16])
 
-text=[r'$\pi$', r'$\frac{\pi}{2}$', r'$\frac{3\pi}{4}$', r'$\frac{\pi}{6}$', '', '' '', '', '', '', '']
+print(pist_xy)
+print(nim)
+colors=np.array(['red', 'green', 'blue', 'orange','red', 'green', 'blue', 'orange','orange'])
+
+text=[r'$\pi$', r'$\frac{\pi}{2}$', r'$\frac{3\pi}{4}$', r'$\frac{\pi}{6}$', '', '' '', '', '', '']
 
 x = np.cos(pist_xy/nim)
 y = np.sin(pist_xy/nim)
