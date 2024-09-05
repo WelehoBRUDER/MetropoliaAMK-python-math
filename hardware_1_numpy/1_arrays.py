@@ -1,11 +1,21 @@
 import numpy as np
 
+
+def display_vector(vector, name):
+    variables = ["i", "j", "k"]
+    output = f"Vektori {name} = "
+    for i in range(len(vector)):
+        output += f"{vector[i]}{variables[i]} "
+
+    print(output)
+
+
 # teht 1 - 20-alkioinen taulukko
 array = np.random.randint(20, size=20)
 array.sort()
 array = array[::-1]
 array = array.reshape(4, 5)
-print(array)
+#print(array)
 
 # teht 2 - vektorit
 vector_u = np.array([2, 3])
@@ -13,10 +23,10 @@ vector_v = np.array([4, -7])
 vector_uu = np.array([1, 1, 1])
 vector_vv = np.array([3, -3, 2])
 
-print(f"U = {vector_u}")
-print(f"V = {vector_v}")
-print(f"UU = {vector_uu}")
-print(f"VV = {vector_vv}")
+display_vector(vector_u,"U")
+display_vector(vector_v,"V")
+display_vector(vector_uu,"UU")
+display_vector(vector_vv,"VV")
 
 # teht 3 - vektorien normi
 norm_u = np.linalg.norm(vector_u)
