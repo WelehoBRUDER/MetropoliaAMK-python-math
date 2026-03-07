@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>homework_7.ipynb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #cf8e6d;}
+.s2 { color: #bcbec4;}
+.s3 { color: #bcbec4;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+homework_7.ipynb</font>
+</center></td></tr></table>
+<pre><span class="s0">#%% 
+</span><span class="s1">import </span><span class="s2">numpy </span><span class="s1">as </span><span class="s2">np</span>
+
+<span class="s2">data33 </span><span class="s3">= </span><span class="s2">np</span><span class="s3">.</span><span class="s2">array</span><span class="s3">([ </span><span class="s4">115</span><span class="s3">, </span><span class="s4">125</span><span class="s3">, </span><span class="s4">102</span><span class="s3">, </span><span class="s4">129</span><span class="s3">, </span><span class="s4">121</span><span class="s3">, </span>
+<span class="s4">119</span><span class="s3">, </span><span class="s4">120</span><span class="s3">, </span><span class="s4">120</span><span class="s3">, </span><span class="s4">126</span><span class="s3">, </span><span class="s4">120</span><span class="s3">, </span><span class="s4">124</span><span class="s3">, </span><span class="s4">118</span><span class="s3">, </span><span class="s4">116</span><span class="s3">, </span><span class="s4">132</span><span class="s3">, </span>
+<span class="s4">114</span><span class="s3">, </span><span class="s4">108</span><span class="s3">, </span><span class="s4">127</span><span class="s3">, </span><span class="s4">131</span><span class="s3">, </span><span class="s4">130</span><span class="s3">, </span><span class="s4">181</span><span class="s3">])</span>
+<span class="s2">data33</span>
+<span class="s0">#%% 
+</span><span class="s1">from </span><span class="s2">scipy</span><span class="s3">.</span><span class="s2">stats </span><span class="s1">import </span><span class="s2">norm</span>
+<span class="s2">mu_0 </span><span class="s3">= </span><span class="s4">120</span>
+<span class="s2">sigma2 </span><span class="s3">= </span><span class="s4">60</span>
+<span class="s2">sigma </span><span class="s3">= </span><span class="s2">np</span><span class="s3">.</span><span class="s2">sqrt</span><span class="s3">(</span><span class="s2">sigma2</span><span class="s3">)</span>
+<span class="s2">n </span><span class="s3">= </span><span class="s2">len</span><span class="s3">(</span><span class="s2">data33</span><span class="s3">)</span>
+<span class="s2">xbar </span><span class="s3">= </span><span class="s2">data33</span><span class="s3">.</span><span class="s2">mean</span><span class="s3">()</span>
+<span class="s2">z </span><span class="s3">= (</span><span class="s2">xbar </span><span class="s3">- </span><span class="s2">mu_0</span><span class="s3">) / (</span><span class="s2">sigma </span><span class="s3">/ </span><span class="s2">np</span><span class="s3">.</span><span class="s2">sqrt</span><span class="s3">(</span><span class="s2">n</span><span class="s3">))</span>
+<span class="s2">p </span><span class="s3">= </span><span class="s4">2 </span><span class="s3">* (</span><span class="s4">1 </span><span class="s3">- </span><span class="s2">norm</span><span class="s3">.</span><span class="s2">cdf</span><span class="s3">(</span><span class="s2">abs</span><span class="s3">(</span><span class="s2">z</span><span class="s3">)))</span>
+
+<span class="s2">print</span><span class="s3">(</span><span class="s5">&quot;z: &quot;</span><span class="s3">, </span><span class="s2">z</span><span class="s3">)</span>
+<span class="s2">print</span><span class="s3">(</span><span class="s5">&quot;p: &quot;</span><span class="s3">, </span><span class="s2">p</span><span class="s3">)</span>
+<span class="s0">#%% md 
+</span><span class="s2">Voidaan hyväksyä jos merkitsevyystaso on 0.01  
+</span><span class="s0">#%% 
+</span><span class="s2">data34 </span><span class="s3">= </span><span class="s2">np</span><span class="s3">.</span><span class="s2">array</span><span class="s3">([ </span><span class="s4">53.08</span><span class="s3">, </span><span class="s4">57.07</span><span class="s3">, </span><span class="s4">54.10</span><span class="s3">, </span><span class="s4">56.81</span><span class="s3">, </span>
+<span class="s4">58.85</span><span class="s3">, </span><span class="s4">56.02</span><span class="s3">, </span><span class="s4">59.08</span><span class="s3">, </span><span class="s4">55.78</span><span class="s3">, </span><span class="s4">56.72</span><span class="s3">, </span><span class="s4">54.92</span><span class="s3">, </span><span class="s4">57.32</span><span class="s3">, </span>
+<span class="s4">59.00</span><span class="s3">, </span><span class="s4">54.91</span><span class="s3">, </span><span class="s4">58.13</span><span class="s3">, </span><span class="s4">60.69</span><span class="s3">, </span><span class="s4">51.76</span><span class="s3">, </span><span class="s4">52.31</span><span class="s3">, </span><span class="s4">60.50</span><span class="s3">, </span>
+<span class="s4">58.31</span><span class="s3">, </span><span class="s4">58.70</span><span class="s3">])</span>
+<span class="s2">mu_0 </span><span class="s3">= </span><span class="s4">55</span>
+<span class="s2">sigma </span><span class="s3">= </span><span class="s4">2.3</span>
+<span class="s2">n </span><span class="s3">= </span><span class="s2">len</span><span class="s3">(</span><span class="s2">data34</span><span class="s3">)</span>
+<span class="s2">xbar </span><span class="s3">= </span><span class="s2">data34</span><span class="s3">.</span><span class="s2">mean</span><span class="s3">()</span>
+<span class="s2">z </span><span class="s3">= (</span><span class="s2">xbar </span><span class="s3">- </span><span class="s2">mu_0</span><span class="s3">) / (</span><span class="s2">sigma </span><span class="s3">/ </span><span class="s2">np</span><span class="s3">.</span><span class="s2">sqrt</span><span class="s3">(</span><span class="s2">n</span><span class="s3">))</span>
+<span class="s2">accept </span><span class="s3">= </span><span class="s2">abs</span><span class="s3">(</span><span class="s2">z</span><span class="s3">) &lt;= </span><span class="s4">1.96</span>
+<span class="s2">print</span><span class="s3">(</span><span class="s5">&quot;z: &quot;</span><span class="s3">, </span><span class="s2">z</span><span class="s3">)</span>
+<span class="s2">print</span><span class="s3">(</span><span class="s5">&quot;Hyväksyttävä (mu 55): &quot;</span><span class="s3">, </span><span class="s2">accept</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span><span class="s2">data35 </span><span class="s3">= </span><span class="s2">np</span><span class="s3">.</span><span class="s2">array</span><span class="s3">([ </span><span class="s4">37.5</span><span class="s3">, </span><span class="s4">40.9</span><span class="s3">, </span><span class="s4">43.3</span><span class="s3">, </span><span class="s4">37.2</span><span class="s3">, </span>
+<span class="s4">42.5</span><span class="s3">, </span><span class="s4">42.0</span><span class="s3">, </span><span class="s4">40.8</span><span class="s3">, </span><span class="s4">40.9</span><span class="s3">, </span><span class="s4">36.5</span><span class="s3">, </span><span class="s4">36.8</span><span class="s3">, </span><span class="s4">39.7</span><span class="s3">, </span>
+<span class="s4">42.6</span><span class="s3">, </span><span class="s4">45.9</span><span class="s3">, </span><span class="s4">47.0</span><span class="s3">, </span><span class="s4">33.8</span><span class="s3">, </span><span class="s4">40.8</span><span class="s3">, </span><span class="s4">45.8</span><span class="s3">, </span><span class="s4">36.5</span><span class="s3">, </span>
+<span class="s4">42.4</span><span class="s3">, </span><span class="s4">46.4</span><span class="s3">, </span><span class="s4">44.8</span><span class="s3">, </span><span class="s4">43.3</span><span class="s3">, </span><span class="s4">53.7</span><span class="s3">, </span><span class="s4">44.6</span><span class="s3">, </span><span class="s4">45.6</span><span class="s3">, </span>
+<span class="s4">46.5</span><span class="s3">, </span><span class="s4">36.8</span><span class="s3">, </span><span class="s4">47.8</span><span class="s3">, </span><span class="s4">40.9</span><span class="s3">, </span><span class="s4">48.6</span><span class="s3">])</span>
+<span class="s2">mu_0 </span><span class="s3">= </span><span class="s4">42.8</span>
+<span class="s2">sigma </span><span class="s3">= </span><span class="s4">4.6</span>
+<span class="s2">alpha </span><span class="s3">= </span><span class="s4">0.05</span>
+<span class="s2">n </span><span class="s3">= </span><span class="s2">len</span><span class="s3">(</span><span class="s2">data35</span><span class="s3">)</span>
+<span class="s2">xbar </span><span class="s3">= </span><span class="s2">data35</span><span class="s3">.</span><span class="s2">mean</span><span class="s3">()</span>
+<span class="s2">z </span><span class="s3">= (</span><span class="s2">xbar </span><span class="s3">- </span><span class="s2">mu_0</span><span class="s3">) / (</span><span class="s2">sigma </span><span class="s3">/ </span><span class="s2">np</span><span class="s3">.</span><span class="s2">sqrt</span><span class="s3">(</span><span class="s2">n</span><span class="s3">))</span>
+<span class="s2">z_critical </span><span class="s3">= -</span><span class="s4">1.645</span>
+<span class="s2">accept </span><span class="s3">= </span><span class="s2">z </span><span class="s3">&gt;= </span><span class="s2">z_critical</span>
+<span class="s2">print</span><span class="s3">(</span><span class="s5">&quot;z: &quot;</span><span class="s3">, </span><span class="s2">z</span><span class="s3">)</span>
+<span class="s2">print</span><span class="s3">(</span><span class="s5">&quot;Hyväksyttävä: &quot;</span><span class="s3">, </span><span class="s2">accept</span><span class="s3">)</span>
+<span class="s0">#%% 
+</span></pre>
+</body>
+</html>
